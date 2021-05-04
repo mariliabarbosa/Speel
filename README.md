@@ -1,4 +1,5 @@
 # SPEEL
+![logo](https://i.imgur.com/D5BgDK5.png)
 ## O que é o SPEEL?
 O SPEEL é um sensor que tem como objetivo indicar quantas pessoas entraram em um ambiente e gerar relatórios para o usuário, com informações como o **número de pessoas que entraram no total** e **média de pessoas por horário**.
 ## Funcionalidades

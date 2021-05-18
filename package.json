@@ -1,0 +1,23 @@
+{
+  "name": "speel_api",
+  "version": "1.0.0",
+  "description": "API for SPEEL",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "author": "Giovanna Souto, Marilia Barbosa, Rafaela Barros",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^9.0.2",
+    "express": "^4.17.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.6.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7",
+    "sequelize-cli": "^6.2.0"
+  }
+}

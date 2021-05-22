@@ -4,8 +4,7 @@
   "description": "API for SPEEL",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js"
+    "start": "nodemon src/index.js"
   },
   "author": "Giovanna Souto, Marilia Barbosa, Rafaela Barros",
   "license": "ISC",

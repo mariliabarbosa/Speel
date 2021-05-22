@@ -8,6 +8,7 @@ const SensorController = require("./controllers/SensorController");
 const ReportController = require("./controllers/ReportController");
 
 const UserValidator = require("./validators/UserValidator");
+const SensorValidator = require("./validators/SensorValidator");
 
 routes.post('/users', UserValidator, UserController.store);
 
@@ -20,8 +21,8 @@ routes.delete('/users/:id', UserController.delete);
 
 routes.get('/sensors', SensorController.index);
 routes.get('/sensors/:id', SensorController.getSensor);
-routes.post('/sensors', SensorController.store);
-routes.patch('/sensors/:id', SensorController.update);
+routes.post('/sensors', SensorValidator, SensorController.store);
+routes.patch('/sensors/:id', SensorValidator,SensorController.update);
 routes.delete('/sensors/:id', SensorController.delete);
 
 routes.get('/reports/:sensor_id', ReportController.index);

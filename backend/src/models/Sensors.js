@@ -3,7 +3,10 @@ const { Model, Sequelize } = require("sequelize");
 class Sensors extends Model{
     static init(sequelize){
         super.init({
-            id: Sequelize.STRING,
+            id: {
+                type: Sequelize.STRING,
+                primaryKey: true,
+            },
             state: Sequelize.BOOLEAN,
             name: Sequelize.STRING,
             created_at: {
@@ -20,7 +23,7 @@ class Sensors extends Model{
     }
 
     static associate(models){
-        this.belongsTo(models.Users, { foreignKey: 'user_id', as: 'user' });
+        this.belongsTo(models.User, { foreignKey: 'user_id', as: 'user' });
         this.hasMany(models.Reports, { foreignKey: 'report_id', as: 'report' });
     }
 }

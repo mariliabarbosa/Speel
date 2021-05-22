@@ -4,6 +4,8 @@ const routes = require('./routes');
 const app = express();
 var port = process.env.PORT || 3005;
 
+require("./database");
+
 app.use(express.json());
 app.use(routes);
 

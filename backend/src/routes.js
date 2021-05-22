@@ -6,13 +6,16 @@ const authMiddleware = require("./middlewares/auth");
 const UserController = require("./controllers/UserController");
 const SensorController = require("./controllers/SensorController");
 const ReportController = require("./controllers/ReportController");
+const SessionController = require('./controllers/SessionController');
 
 const UserValidator = require("./validators/UserValidator");
 const SensorValidator = require("./validators/SensorValidator");
 
+routes.post('/', SessionController.store);
 routes.post('/users', UserValidator, UserController.store);
 
 routes.use(authMiddleware);
+routes.use((req, res, next) => {console.log('oi'); return next()})
 
 routes.get('/users', UserController.index);
 routes.get('/users/:id', UserController.getUser);

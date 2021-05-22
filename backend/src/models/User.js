@@ -8,20 +8,13 @@ class User extends Model{
             id: {
                 primaryKey: true,
                 type: Sequelize.INTEGER,
+                autoIncrement: true,
             },
             name: Sequelize.STRING,
             email: Sequelize.STRING,
             cnpj: Sequelize.STRING,
             password: Sequelize.VIRTUAL,
             password_hash: Sequelize.STRING,
-            created_at: {
-                type: Sequelize.DATE,
-                defaultValue: Sequelize.NOW,
-            },
-            updated_at: {
-                type: Sequelize.DATE,
-                defaultValue: Sequelize.NOW,
-            },
         }, {
             sequelize,
             tableName: 'users'

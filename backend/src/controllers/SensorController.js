@@ -17,9 +17,9 @@ module.exports = {
     },
     async store(req, res){
         const user_id = req.id;
-        const { id } = req.body;
+        const { id, name } = req.body;
 
-        const sensor = await Sensors.create({ id, user_id, name: null, state: null});
+        const sensor = await Sensors.create({ id, user_id, name, state: null });
 
         return res.json(sensor);
     },

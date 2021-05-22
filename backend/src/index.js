@@ -7,4 +7,4 @@ var port = process.env.PORT || 3005;
 app.use(express.json());
 app.use(routes);
 
-app.listen(port, () => console.log("RODANDO"));
+app.listen(port, () => console.log("Rodando em http://localhost:3005"));

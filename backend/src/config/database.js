@@ -6,8 +6,7 @@ module.exports = {
     username: process.env.DB_USERNAME,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_DATABASE,
-    dialectOptions: {
-        useUTC: false, //for reading from database
+    dialectOptions: { //for reading from database
         dateStrings: true,
         typeCast: true,
         timezone: "-03:00"

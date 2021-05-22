@@ -10,11 +10,11 @@ module.exports = {
       },
       state:{
         type: Sequelize.BOOLEAN,
-        allowNull: false,
+        allowNull: true,
       },
       name: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: true,
       },
       user_id: {
         type: Sequelize.INTEGER,

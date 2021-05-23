@@ -1,5 +1,4 @@
 const express = require('express');
-const routes = express.Router();
 
 const authMiddleware = require("./middlewares/auth");
 
@@ -11,21 +10,22 @@ const SessionController = require('./controllers/SessionController');
 const UserValidator = require("./validators/UserValidator");
 const SensorValidator = require("./validators/SensorValidator");
 
+const routes = express.Router();
+
 routes.post('/', SessionController.store);
-routes.post('/users', UserValidator, UserController.store);
+routes.post('/users', UserController.store);
 
 routes.use(authMiddleware);
-routes.use((req, res, next) => {console.log('oi'); return next()})
+routes.use((req, res, next) => {console.log(); return next()})
 
 routes.get('/users', UserController.index);
 routes.get('/users/:id', UserController.getUser);
-routes.patch('/users/:id', UserValidator, UserController.update);
+routes.patch('/users/:id', UserController.update);
 routes.delete('/users/:id', UserController.delete);
 
 routes.get('/sensors', SensorController.index);
 routes.get('/sensors/:id', SensorController.getSensor);
-routes.post('/sensors', SensorValidator, SensorController.store);
-routes.patch('/sensors/:id', SensorValidator,SensorController.update);
+routes.patch('/sensors/:id', SensorController.update);
 routes.delete('/sensors/:id', SensorController.delete);
 
 routes.get('/reports/:sensor_id', ReportController.index);

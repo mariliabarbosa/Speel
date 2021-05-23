@@ -29,7 +29,7 @@ class User extends Model{
         return this
     }
     static associate(models){
-        this.hasMany(models.Sensors, { foreignKey: 'sensor_id', as: 'sensors'});
+        this.hasMany(models.Sensors, { foreignKey: 'id', as: 'sensors'});
     }
 }
 

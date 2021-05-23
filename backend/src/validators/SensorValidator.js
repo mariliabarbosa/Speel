@@ -3,7 +3,7 @@ const yup = require("yup");
 const sensor = async (req, res, next) => {
   try{
       const schema = yup.object().shape({
-          id: yup.string().required(),
+          id: yup.string(),
           name: yup.string().notRequired(),
           state: yup.boolean().notRequired(),
       });

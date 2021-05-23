@@ -23,8 +23,8 @@ class Sensors extends Model{
     }
 
     static associate(models){
-        this.belongsTo(models.User, { foreignKey: 'user_id', as: 'user' });
-        this.hasMany(models.Reports, { foreignKey: 'report_id', as: 'report' });
+        this.belongsTo(models.User, { foreignKey: 'id', as: 'user_id' });
+        this.hasMany(models.Reports, { foreignKey: 'id', as: 'report' });
     }
 }
 

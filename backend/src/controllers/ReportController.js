@@ -1,4 +1,5 @@
 const Reports = require("../models/Reports");
+const sequelize = require("sequelize");
 
 module.exports = {
     async index(req, res){
@@ -10,22 +11,29 @@ module.exports = {
     },
     async getReportByYear(req, res){
         const { sensor_id, year } = req.params;
-
-        const reports = await Reports.findAll({ where: {  sensor_id, created_at: created_at.includes(year) }});
+        
+        const reports = await Reports.findAll({ where: { year, sensor_id }});
 
         return res.json(reports);
     },
     async getReportByMonth(req, res){
         const { sensor_id, year, month } = req.params;
 
-        const reports = await Reports.findAll({ where: {  sensor_id, created_at: created_at.includes(year&&month) }});
+        var reports = await Reports.findAll({ where: { sensor_id, year, month }});
 
         return res.json(reports);
     },
     async getReportByDay(req, res){
         const { year, month, day } = req.params;
 
-        const reports = await Reports.findAll({ where: {  sensor_id, created_at: created_at.includes(year&&month&&day) }});
+        const reports = await Reports.findAll({ where: {  sensor_id, year, month, day }});
+        
+        return res.json(reports);
+    },
+    async getReportByHour(req, res){
+        const { year, month, day, hour } = req.params;
+
+        const reports = await Reports.findAll({ where: {  sensor_id, year, month, day, hour }});
         
         return res.json(reports);
     },

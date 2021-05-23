@@ -9,14 +9,6 @@ class Sensors extends Model{
             },
             state: Sequelize.BOOLEAN,
             name: Sequelize.STRING,
-            created_at: {
-                type: Sequelize.DATE,
-                defaultValue: Sequelize.NOW,
-            },
-            updated_at: {
-                type: Sequelize.DATE,
-                defaultValue: Sequelize.NOW,
-            },
         }, {
             sequelize
         });
@@ -24,7 +16,7 @@ class Sensors extends Model{
 
     static associate(models){
         this.belongsTo(models.User, { foreignKey: 'id', as: 'user_id' });
-        this.hasMany(models.Reports, { foreignKey: 'id', as: 'report' });
+        this.hasMany(models.Reports);
     }
 }
 

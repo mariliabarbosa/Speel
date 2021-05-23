@@ -7,9 +7,6 @@ const SensorController = require("./controllers/SensorController");
 const ReportController = require("./controllers/ReportController");
 const SessionController = require('./controllers/SessionController');
 
-const UserValidator = require("./validators/UserValidator");
-const SensorValidator = require("./validators/SensorValidator");
-
 const routes = express.Router();
 
 routes.post('/', SessionController.store);
@@ -25,12 +22,14 @@ routes.delete('/users/:id', UserController.delete);
 
 routes.get('/sensors', SensorController.index);
 routes.get('/sensors/:id', SensorController.getSensor);
+routes.post('/sensors/', SensorController.store);
 routes.patch('/sensors/:id', SensorController.update);
 routes.delete('/sensors/:id', SensorController.delete);
 
 routes.get('/reports/:sensor_id', ReportController.index);
-routes.get('/reports/:sensor_id/:year/', ReportController.getReportByYear);
+routes.get('/reports/:sensor_id/:year', ReportController.getReportByYear);
 routes.get('/reports/:sensor_id/:year/:month', ReportController.getReportByMonth);
 routes.get('/reports/:sensor_id/:year/:month/:day', ReportController.getReportByDay);
+routes.get('/reports/:sensor_id/:year/:month/:day/:hour', ReportController.getReportByHour);
 
 module.exports = routes;

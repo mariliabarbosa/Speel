@@ -5,11 +5,11 @@ module.exports = {
     async index(req, res){
         const { sensor_id } = req.params;
         
-        const report = await Reports.findAll({ where: { sensor_id }});
+        const reports = await Reports.findAll({ where: { sensor_id }});
 
         const number = reports.length;
 
-        return res(number);
+        return res.json(number);
     },
     async getReportByYear(req, res){
         const { sensor_id, year } = req.params;
@@ -18,7 +18,7 @@ module.exports = {
 
         const number = reports.length;
 
-        return res(number);
+        return res.json(number);
     },
     async getReportByMonth(req, res){
         const { sensor_id, year, month } = req.params;
@@ -27,7 +27,7 @@ module.exports = {
 
         const number = reports.length;
 
-        return res(number);
+        return res.json(number);
     },
     async getReportByDay(req, res){
         const { sensor_id, year, month, day } = req.params;
@@ -36,7 +36,7 @@ module.exports = {
         
         const number = reports.length;
 
-        return res(number);
+        return res.json(number);
     },
     async getReportByHour(req, res){
         const { sensor_id, year, month, day, hour } = req.params;
@@ -45,6 +45,6 @@ module.exports = {
         
         const number = reports.length;
 
-        return res(number);
+        return res.json(number);
     },
 }

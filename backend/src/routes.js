@@ -16,6 +16,7 @@ routes.use(authMiddleware);
 routes.use((req, res, next) => {console.log(); return next()})
 
 routes.get('/users', UserController.index);
+routes.get('/currentuser', UserController.currentUser);
 routes.get('/users/:id', UserController.getUser);
 routes.patch('/users/:id', UserController.update);
 routes.delete('/users/:id', UserController.delete);

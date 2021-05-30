@@ -2,7 +2,7 @@ const User = require("../models/User");
 
 module.exports = {
     async index(req, res){
-        const users = await User.findAll;
+        const users = await User.findAll();
 
         return res.json(users);
     },
@@ -12,6 +12,13 @@ module.exports = {
         const user = await User.findOne({ where: { id }});
 
         if(!user) return res.status(401).send("User not found");
+
+        return res.json(user);
+    },
+    async currentUser(req,res){
+        const id = req.id;
+
+        const user = await User.findOne({ where: { id }});
 
         return res.json(user);
     },

@@ -1,8 +1,11 @@
 const express = require('express');
 const routes = require('./routes');
+const cors = require('cors');
 
 const app = express();
 var port = 8000;
+
+app.use(cors());
 
 require('express-async-errors');
 require("./database");

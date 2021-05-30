@@ -84,7 +84,7 @@ function printHour() {
 
 function start(){
     const verify = localStorage.getItem("token");
-    if(!verify){
+    if(verify == null){
         window.location.href = "../login.html"
     }
 
@@ -98,6 +98,8 @@ function start(){
 
 function logout(){
     localStorage.removeItem("token");
+    localStorage.removeItem("username");
+    localStorage.removeItem("id");
     window.location.href="../pages/login.html";
 }
 

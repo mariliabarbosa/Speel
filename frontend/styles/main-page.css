@@ -1,3 +1,6 @@
+body{
+    overflow: hidden;
+}
 .sidebar{
     position: absolute;
     z-index: 1;

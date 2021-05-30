@@ -105,6 +105,7 @@ function analyzeInput(){
 
 function showChart(size){
     var chart;
+    document.querySelector("#chart p").setAttribute("style", "display:none");
     if(size == 4){
         chart = new ApexCharts(document.querySelector("#chart"), yearOptions);
         chart.render();

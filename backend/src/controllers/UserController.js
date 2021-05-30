@@ -32,7 +32,7 @@ module.exports = {
     },
     async update(req, res){
         const { id } = req.params;
-        const { email, password} = req.body;
+        const { email, password } = req.body;
 
         const user = await User.findOne({ where: { id }});
         

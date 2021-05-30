@@ -1,3 +1,6 @@
+body{
+    overflow: hidden;
+}
 .sidebar{
     position: absolute;
     z-index: 1;
@@ -119,8 +122,18 @@ input:focus{
 }
 #chart{
     width: 1070px;
-    margin-top: 10px;
+    height: 350px;
+    margin-top: 8px;
     background-color: white;
     border-radius: 20px;
     box-shadow: 0px 0px 16px 4px rgba(190, 190, 190, 0.31);
+}
+#chart p{
+    position: relative;
+    text-align: center;
+    margin-top: 0px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    color: rgb(139, 139, 139);
+    padding-top: 145px;
 }

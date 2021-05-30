@@ -20,6 +20,6 @@ function postUser(name, cnpj, email, password){
             'Content-Type': 'application/json',
         }
     }).then((res) => {
-        window.location.href = "../login.html";
+        window.location.href = "login.html";
     });
 }

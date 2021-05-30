@@ -8,7 +8,7 @@ class Reports extends Model{
         });
     }
     static associate(models){
-        this.belongsTo(models.Sensors, { foreignKey: 'id', as: 'sensor_id'})
+        this.belongsTo(models.Sensors, { foreignKey: { name: "id", allowNull: "false" }, as: 'sensor_id'})
     }
 }
 

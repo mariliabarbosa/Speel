@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Relatórios</title>
 </head>
-<body>
+<body onload="getSensors()">
     <div class="sidebar">
         <img class="logo" src="../assets/logo-speel.png">
         <div class="menu">
@@ -33,11 +33,11 @@
             <input id="data" type="text" maxlength="10" placeholder="DD/MM/AAAA" onkeypress="keyPressed(event)">
             <div class="total-people">
                 <p>Número de pessoas que entraram no total</p>
-                <h1 id="total-people">30</h1>
+                <h1 id="total-people">0</h1>
             </div>
             <div class="average-people">
                 <p>Média de pessoas por hora</p>
-                <h1 id="average-people">30</h1>
+                <h1 id="average-people">0</h1>
             </div>
         </div>
         <div id="chart">

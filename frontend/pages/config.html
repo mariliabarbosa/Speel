@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <title>Configurações</title>
 </head>
-<body>
+<body onload="getSensors()">
     <div class="sidebar">
         <img class="logo" src="../assets/logo-speel.png">
         <div class="menu">
@@ -31,6 +31,12 @@
         </div>
         <div class="sensors">
             <h3>Sensores</h3>
+            <div class="sensor-create">
+                <button class='sensor-btn' onclick='newSensor()' style="display:none">Adicionar sensor</button>
+            </div>
+            <div class="sensor-config">
+                
+            </div>
         </div>
     </div>
 </body>

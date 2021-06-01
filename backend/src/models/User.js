@@ -28,9 +28,6 @@ class User extends Model{
 
         return this
     }
-    static associate(models){
-        this.hasMany(models.Sensors, { foreignKey: 'id', as: 'sensors'});
-    }
 }
 
 module.exports = User;

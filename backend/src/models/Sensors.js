@@ -9,15 +9,12 @@ class Sensors extends Model{
             },
             state: Sequelize.BOOLEAN,
             name: Sequelize.STRING,
+            user_id: Sequelize.INTEGER,
         }, {
             sequelize
         });
     }
 
-    static associate(models){
-        this.belongsTo(models.User, { foreignKey: { name: "id", allowNull: "false" }, as: 'user_id' });
-        this.hasMany(models.Reports);
-    }
 }
 
 module.exports = Sensors;

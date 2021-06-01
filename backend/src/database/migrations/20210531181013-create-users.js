@@ -2,25 +2,26 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-     await queryInterface.createTable('reports', { 
-      sensor_id: {
+    return queryInterface.createTable('users', {
+      id: {
+        type: Sequelize.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+        allowNull: false,
+      },
+      name: {
         type: Sequelize.STRING,
         allowNull: false,
-        references: { model:'sensors', key: 'id' },
       },
-      year: {
-        type: Sequelize.INTEGER,
+      email: {
+        type: Sequelize.STRING,
         allowNull: false,
       },
-      month: {
-        type: Sequelize.INTEGER,
+      cnpj: {
+        type: Sequelize.STRING,
         allowNull: false,
       },
-      day: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-      },
-      hour: {
+      password_hash: {
         type: Sequelize.STRING,
         allowNull: false,
       },
@@ -32,10 +33,10 @@ module.exports = {
         type: Sequelize.DATE,
         allowNull: false,
       },
-     });
+    })
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('reports');
+    return queryInterface.dropTable('users');
   }
 };

@@ -9,7 +9,7 @@ function signUp(){
 function postUser(name, cnpj, email, password){
     axios({
         method: 'post',
-        url: 'http://localhost:8000/users',
+        url: 'http://localhost:3030/users',
         data: {
             name,
             cnpj,

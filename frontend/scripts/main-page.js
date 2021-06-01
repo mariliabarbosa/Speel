@@ -1,7 +1,7 @@
 var options = {
     series: [{
         name: "Pessoas",
-        data: [10, 41, 35, 51, 49, 62, 69, 91, 148, 223, 232, 11, 22, 33],
+        data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         colors: ['#00E09D'],
     }],
     chart: {
@@ -33,11 +33,29 @@ const hoje = new Date();
 var currentDate;
 var currentTime;
 const token = 'bearer '+localStorage.getItem("token");
+var sensors = "";
 
-function getUser(){
+function getSensors(){
     axios({
         method: 'get',
-        url: 'http://localhost:8000/currentuser',
+        url: `http://localhost:3030/sensors/`,
+        headers:{
+            'Content-Type': 'application/json',
+            'authorization': token,
+        }
+    }).then((res) => {
+        sensors = res.data;
+        start();
+    });
+}
+
+function getUser(){
+    if(localStorage.getItem("token") === null){
+        window.location.href = "./login.html"
+    }
+    axios({
+        method: 'get',
+        url: 'http://localhost:3030/currentuser',
         headers:{
             'Content-Type': 'application/json',
             'authorization': token,
@@ -45,6 +63,7 @@ function getUser(){
     }).then((res) => {
         localStorage.setItem("id", res.data.id);
         localStorage.setItem("username", res.data.name);
+        getSensors();
     });
 }
 
@@ -83,29 +102,71 @@ function printHour() {
 }
 
 function start(){
-    const verify = localStorage.getItem("token");
-    if(verify == null){
-        window.location.href = "../login.html"
+    if(sensors.length == 0){
+        let userName = localStorage.getItem("username");
+        userName = userName.slice(0, userName.indexOf(" "));
+        document.getElementById("introduction").innerHTML = "<h1>Bem-vindo, "+userName+".</h1>";
+        document.querySelector(".top-items").innerHTML = "<h1>Cadastre um sensor nas configurações</h1>";
+    } else {
+        let userName = localStorage.getItem("username");
+        userName = userName.slice(0, userName.indexOf(" "));
+        
+        getReportsByDay();
+        writeDocument(userName);        
     }
-
-    getUser();
-    let userName = localStorage.getItem("username");
-    userName = userName.slice(0, userName.indexOf(" "));
-    
-    renderChart();
-    writeDocument(userName);
+}
+function getReportsByDay(){
+    const dayData = options.series[0].data;
+    const day = printDate();
+    const sensor = sensors[0].id;
+    let reports = "";
+    axios({
+        method: 'get',
+        url: `http://localhost:3030/reports/${sensor}/${day}`,
+        headers:{
+            'Content-Type': 'application/json',
+            'authorization': token,
+        }
+    }).then((res) => {
+        reports = res.data;
+        separateByHour(reports);
+        getTotalPeople(reports);
+        separateByHour(reports);
+        chart = new ApexCharts(document.querySelector("#chart"), options);
+        chart.render();
+        for(var i in dayData){
+            dayData[i] = 0;
+        }
+    });
+}
+function getTotalPeople(reports){
+    const total = reports.length;
+    document.querySelector("#total-people").innerText =total;
 }
 
+function getAveragePerDay(reports){
+    const total = reports.length;
+    const average = total/24;
+
+    document.querySelector("#average-people").innerText = average.toFixed(2);
+}
+function separateByHour(reports){
+    reports.forEach(report => {
+        let fullHour = report.hour;
+        let hour = Number(fullHour[0]+fullHour[1]);
+        if(hour == 0){
+            options.series[0].data[0]++;    
+        } else {
+            options.series[0].data[hour]++;
+        }
+        
+    });
+}
 function logout(){
     localStorage.removeItem("token");
     localStorage.removeItem("username");
     localStorage.removeItem("id");
     window.location.href="../pages/login.html";
-}
-
-function renderChart(){
-    var chart = new ApexCharts(document.querySelector("#chart"), options);
-    chart.render();
 }
 
 function writeDocument(userName){

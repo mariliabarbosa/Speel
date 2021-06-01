@@ -37,7 +37,9 @@ module.exports = {
         return res.json(sensor);
     },
     async delete(req, res){
-        const { id } = req.params;
+        let { id } = req.params;
+        
+        id = id.toString();
 
         const sensor = await Sensors.findOne({ where: { id }});
         
@@ -45,6 +47,6 @@ module.exports = {
 
         sensor.destroy();
 
-        return res(`Sensor ${id} deleted`);
+        return res.send(`Sensor ${id} deleted`);
     }
 }

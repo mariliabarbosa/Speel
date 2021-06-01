@@ -4,12 +4,12 @@ class Reports extends Model{
     static init(sequelize){
         super.init({
             sensor_id: {
-                type: Sequelize.STRING,
+                type: Sequelize.INTEGER,
             },
             year: Sequelize.INTEGER,
             month: Sequelize.INTEGER,
             day: Sequelize.INTEGER,
-            hour: Sequelize.STRING
+            hour: Sequelize.INTEGER
         },{
             sequelize
         });

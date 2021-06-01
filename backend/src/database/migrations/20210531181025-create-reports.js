@@ -3,26 +3,31 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
      await queryInterface.createTable('reports', { 
-      sensor_id: {
-        type: Sequelize.STRING,
+      id: {
+        type: Sequelize.INTEGER,
         allowNull: false,
-        primaryKey:true,
+        autoIncrement: true,
+        primaryKey: true,
+      },
+      sensor_id: {
+        type: Sequelize.INTEGER,
+        allowNull: true,
       },
       year: {
         type: Sequelize.INTEGER,
-        allowNull: false,
+        allowNull: true,
       },
       month: {
         type: Sequelize.INTEGER,
-        allowNull: false,
+        allowNull: true,
       },
       day: {
         type: Sequelize.INTEGER,
-        allowNull: false,
+        allowNull: true,
       },
       hour: {
-        type: Sequelize.STRING,
-        allowNull: false,
+        type: Sequelize.INTEGER,
+        allowNull: true,
       },
       created_at: {
         type: Sequelize.DATE,

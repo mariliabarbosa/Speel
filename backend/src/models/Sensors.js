@@ -4,7 +4,7 @@ class Sensors extends Model{
     static init(sequelize){
         super.init({
             id: {
-                type: Sequelize.STRING,
+                type: Sequelize.INTEGER,
                 primaryKey: true,
             },
             state: Sequelize.BOOLEAN,

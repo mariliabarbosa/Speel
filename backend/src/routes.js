@@ -31,5 +31,6 @@ routes.get('/reports/:sensor_id', ReportController.index);
 routes.get('/reports/:sensor_id/:year', ReportController.getReportByYear);
 routes.get('/reports/:sensor_id/:month/:year', ReportController.getReportByMonth);
 routes.get('/reports/:sensor_id/:day/:month/:year', ReportController.getReportByDay);
+routes.post('/reports', ReportController.store);
 
 module.exports = routes;

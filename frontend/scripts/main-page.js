@@ -152,8 +152,7 @@ function getAveragePerDay(reports){
 }
 function separateByHour(reports){
     reports.forEach(report => {
-        let fullHour = report.hour;
-        let hour = Number(fullHour[0]+fullHour[1]);
+        let hour = report.hour;
         if(hour == 0){
             options.series[0].data[0]++;    
         } else {

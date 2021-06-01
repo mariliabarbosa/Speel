@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../styles/reports.css">
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../scripts/reports.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios</title>
+</head>
+<body onload="getSensors()">
+    <div class="sidebar">
+        <img class="logo" src="../assets/logo-speel.png">
+        <div class="menu">
+            <a href="main-page.html"><p>Início</p></a>
+            <p id="current-page">Relatórios</p>
+            <a href="config.html"><p>Configurações</p></a>
+            <p onclick="logout()">Sair</p>
+        </div>
+    </div>
+    <div class="content">
+        <h1 class="title">Relatórios</h1>
+        <div class="menu-date">
+            <div id="diario" onclick="dailySelector()" style="color: #00E09D">Diário </div>
+            |<div id="mensal" onclick="monthSelector()"> Mensal </div>
+            |<div id="anual" onclick="yearSelector()"> Anual </div>
+        </div>
+        <div class="top-items">
+            <input id="data" type="text" maxlength="10" placeholder="DD/MM/AAAA" onkeypress="keyPressed(event)">
+            <div class="total-people">
+                <p>Número de pessoas que entraram no total</p>
+                <h1 id="total-people">0</h1>
+            </div>
+            <div class="average-people">
+                <p>Média de pessoas por hora</p>
+                <h1 id="average-people">0</h1>
+            </div>
+        </div>
+        <div id="chart">
+            <p>Escolha uma opção</p>
+        </div>
+    </div>
+</body>
+</html>

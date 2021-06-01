@@ -1,0 +1,137 @@
+.sidebar{
+    position: absolute;
+    width: 400px;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    
+    background: #000000;
+}
+.galeria{
+    position: absolute;
+    left: 400px;
+    top: 0px;
+    max-width:100%;
+    max-height:100%;
+
+    overflow: hidden;
+    filter: grayscale(100%) sepia(100%) hue-rotate(100deg) brightness(80%) saturate(150%);
+}
+.galeria img{
+    width: 100%;
+    object-fit: contain;
+    vertical-align: bottom;
+    filter: grayscale(100%) sepia(100%) hue-rotate(100deg) brightness(80%) saturate(150%);
+}
+.login{
+    margin-left: 24px;
+    margin-top: 130px;
+    width: 100px;
+    height: 100px;
+}
+input{
+    position: relative;
+    width: 350px;
+    height: 50px;
+    margin-bottom: 20px;
+
+    background: #FFFFFF;
+    color: rgb(14, 14, 14);
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    text-indent: 15px;
+    border-radius: 10px;
+    border-style: none;
+    outline: none;
+    transition: 0.3s;
+} 
+input:focus{
+    box-shadow:inset 0px 0px 0px 2px#00E09D;
+}
+.login button{
+    position: relative;
+    width: 100px;
+    height: 50px;
+    top: 15px;
+    margin-left: 125px;
+
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 42px;
+    color: white;
+    
+    background: #00E09D;
+    border-radius: 40px;
+    border-style: none;
+    transition: 0.3s;
+}
+.login button:hover{
+    background: #fff;
+    color: #000;
+    cursor:pointer;
+}
+.cadastro{
+    color: #fff;
+    width: 200px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 15px;
+    margin-left: 75px;
+    margin-top: 30px;
+    font-family: 'Roboto', sans-serif;
+}
+#error{
+    color:red;
+    width: 200px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 15px;
+    margin-left: 75px;
+    margin-top: 0px;
+    font-family: 'Roboto', sans-serif;
+}
+h1{
+    position: relative;
+    margin-bottom: 0px;
+    
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 56px;
+
+    color: #FFFFFF;
+}
+.logo{
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    top: 50px;
+    width: 150px;
+    height: 60px;
+}
+/* Rodapé */
+.footer{
+    position: absolute;
+    width: 100%;
+    height: 70px;
+    left: 0px;
+    bottom: 0px;
+
+    background: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+}
+
+.footer-logo{
+    position: relative;
+    width: 70px;
+    height: 30px;
+    margin-top: 20px;
+    left: 65px;
+    display: flex;
+    align-items: center;
+}

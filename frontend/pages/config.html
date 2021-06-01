@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width= device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../scripts/config.js"></script>
+    <link rel="stylesheet" href="../styles/config.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>Configurações</title>
+</head>
+<body onload="getSensors()">
+    <div class="sidebar">
+        <img class="logo" src="../assets/logo-speel.png">
+        <div class="menu">
+            <a href="main-page.html"><p>Início</p></a>
+            <a href="reports.html"><p>Relatórios</p></a>
+            <p id="current-page">Configurações</p>
+            <p onclick="logout()">Sair</p>
+        </div>
+    </div>
+    <div class="content">
+        <h1 class="title">Configurações</h1>
+        <div class="account">
+            <h3>Conta</h3>
+            <input id="email" placeholder="Alterar e-mail"><button class="change-btn" onclick="changeEmail()">Alterar</button><br>
+            <input id="password" type="password" placeholder="Alterar senha"><button class="change-btn" onclick="changePassword()">Alterar</button><br>
+            <button id="deactivate" onclick="deleteAccount()">Deletar conta</button>
+        </div>
+        <div class="sensors">
+            <h3>Sensores</h3>
+            <div class="sensor-create">
+                <button class='sensor-btn' onclick='newSensor()' style="display:none">Adicionar sensor</button>
+            </div>
+            <div class="sensor-config">
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>

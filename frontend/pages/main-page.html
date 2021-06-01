@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../styles/main-page.css">
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../scripts/main-page.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>Início</title>
+</head>
+<body onload="getUser()">
+    <div class="sidebar">
+        <img class="logo" src="../assets/logo-speel.png">
+        <div class="menu">
+            <p id="current-page">Início</p>
+            <a href="reports.html"><p>Relatórios</p></a>
+            <a href="config.html"><p>Configurações</p></a>
+            <p onclick="logout()">Sair</p>
+        </div>
+    </div>
+    <div class="content">
+        <div id="introduction">
+            
+        </div>
+        <div class="top-items">
+            <div id="date">
+                <p id="today"></p>
+                <h1 id="current-time"></h1>
+            </div>
+            <div class="total-people">
+                <p>Número de pessoas que entraram no total</p>
+                <h1 id="total-people">0</h1>
+            </div>
+            <div class="average-people">
+                <p>Média de pessoas por hora</p>
+                <h1 id="average-people">0</h1>
+            </div>
+        </div>
+        <div id="chart">
+        </div>
+    </div>
+</body>
+</html>

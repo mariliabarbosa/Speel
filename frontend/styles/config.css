@@ -1,0 +1,164 @@
+body{
+    overflow: scroll;
+}
+.sidebar{
+    position: absolute;
+    z-index: 1;
+    width: 200px;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    
+    background: #000000;
+}
+.logo{
+    width: 150px;
+    margin-left: 20px;
+    margin-top: 30px;
+}
+.menu{
+    background-color: black;
+    margin-left: 20px;
+    font-size: 25px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+}
+.menu p{
+    margin-bottom: -20px;
+}
+.menu a{
+    text-decoration: none;
+    color: white;
+}
+#current-page{
+    color: #00E09D;
+}
+.content{
+    font-family: 'Roboto', sans-serif;
+    padding-left: 230px;
+    overflow: hidden;
+}
+.title{
+    font-family: 'Roboto', sans-serif;
+    font-size: 40px;
+}
+.account{
+    margin-top: -20px;
+}
+.account h3{
+    font-size: 30px;
+    font-weight: 100;
+    margin-bottom: 5px;
+}
+input{
+    width: 250px;
+    height: 50px;
+    margin-top: 5px;
+    margin-left: 20px;
+    margin-bottom: 5px;
+    background: #FFFFFF;
+    color: rgb(14, 14, 14);
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    text-indent: 15px;
+    border-style: none;
+    outline: none;
+    transition: 0.3s;
+    box-shadow: 0px 0px 8px 4px rgba(190, 190, 190, 0.31);
+}
+.change-btn{
+    margin-left: 20px;
+    width: 100px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 42px;
+    color: white;
+    
+    background: #00E09D;
+    border-radius: 40px;
+    border-style: none;
+    transition: 0.3s;
+}
+.change-btn:hover{
+    cursor: pointer;
+}
+
+#deactivate{
+    margin-top: 20px;
+    width: 390px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 42px;
+    color: white;
+    
+    background: #000000;
+    border-radius: 40px;
+    border-style: none;
+    transition: 0.3s;
+}
+
+#deactivate:hover{
+    cursor: pointer;
+}
+
+.sensors h3{
+    font-size: 30px;
+    font-weight: 100;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+.sensor-btn{
+    margin-top: 20px;
+    width: 390px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 42px;
+    color: white;
+    
+    background: #00E09D;
+    border-radius: 40px;
+    border-style: none;
+    transition: 0.3s;
+}
+.sensor-btn:hover{
+    cursor: pointer;
+}
+.sensor-input{
+    width: 330px;
+    height: 50px;
+    margin-top: 5px;
+    margin-left: 20px;
+    margin-bottom: 5px;
+    background: #FFFFFF;
+    color: rgb(14, 14, 14);
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    text-indent: 15px;
+    border-style: none;
+    outline: none;
+    transition: 0.3s;
+    box-shadow: 0px 0px 8px 4px rgba(190, 190, 190, 0.31);
+}
+#delete-sensor{
+    margin-top: 20px;
+    width: 390px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 42px;
+    color: white;
+    
+    background: #000000;
+    border-radius: 40px;
+    border-style: none;
+    transition: 0.3s;
+}

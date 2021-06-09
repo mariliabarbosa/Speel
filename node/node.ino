@@ -6,8 +6,8 @@
 
 WiFiClient client;
 
-char ssid[] = "Francisco Barbosa";//  Nome de rede Wifi
-char pass[] = "socorro2019"; // Senha Wi-Fi
+char ssid[] = "";//  Nome de rede Wifi
+char pass[] = ""; // Senha Wi-Fi
 
 char apiKeyValue[] = "tPmAT5Ab3j7F9";
 
@@ -76,7 +76,7 @@ void EnviaDados() {
     HTTPClient http;
     
     // Your Domain name with URL path or IP address with path
-    http.begin(client, "http://192.168.100.6/SPEEL/post-esp-data.php");
+    http.begin(client, "SPEEL/post-esp-data.php");
     
     // Specify content-type header
     http.addHeader("Content-Type", "application/x-www-form-urlencoded");

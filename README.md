@@ -9,8 +9,7 @@ O SPEEL é um sensor que tem como objetivo indicar quantas pessoas entraram em u
 - Acessar relatórios de qualquer lugar.
 - Verificar remotamente o estado do sensor.
 
-![inicio](https://i.imgur.com/WEkwn7o.png)
-
+![gif](https://j.gifs.com/EqlGWm.gif)
 ## Equipe
 
 - [Giovanna Souto (@gisoaz)](https://github.com/gisoaz)

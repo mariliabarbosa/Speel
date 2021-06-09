@@ -112,8 +112,8 @@ void getTime(){
   
   struct tm *ptm = gmtime ((time_t *)&epochTime); 
 
-  year = ptm->tm_year-134202;
-  month = ptm->tm_mon;
-  day = ptm->tm_mday-6;
+  year = ptm->tm_year+1900;
+  month = ptm->tm_mon+1;
+  day = ptm->tm_mday;
   hour = timeClient.getHours();
 }
